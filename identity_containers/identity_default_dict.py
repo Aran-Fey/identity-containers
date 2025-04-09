@@ -26,6 +26,13 @@ class IdentityDefaultDict(IdentityDict[K, V]):
             self[key] = value
             return value
 
+    def __contains__(self, key: object) -> bool:
+        try:
+            super().__getitem__(key)  # type: ignore
+            return True
+        except KeyError:
+            return False
+
     def __repr__(self) -> str:
         cls_name = type(self).__name__
         items = self._repr_items()

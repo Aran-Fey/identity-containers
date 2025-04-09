@@ -21,6 +21,11 @@ def test_access_existing_key():
     assert iddict["foo"] is foo
 
 
+def test_in_operator():
+    iddict = IdentityDefaultDict(list)
+    assert "foo" not in iddict
+
+
 def test_repr():
     idict = IdentityDefaultDict(set, [([], "a"), ("b", {})])
     assert repr(idict) == "IdentityDefaultDict(<class 'set'>, [([], 'a'), ('b', {})])"
