@@ -43,3 +43,11 @@ class IdentityDict(collections.abc.MutableMapping[K, V]):
 
     def __len__(self) -> int:
         return len(self._keys)
+
+    def _repr_items(self) -> str:
+        return repr(list(self.items()))
+
+    def __repr__(self) -> str:
+        cls_name = type(self).__name__
+        items = self._repr_items()
+        return f"{cls_name}({items})"

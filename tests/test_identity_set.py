@@ -56,3 +56,8 @@ def test_union():
     fset: IdentitySet[float] = iset.union([3.5])
 
     assert set(fset) == {1, 2, 3, 3.5}
+
+
+def test_repr():
+    iset = IdentitySet([[], {}, 3])
+    assert repr(iset) == "IdentitySet([[], {}, 3])"

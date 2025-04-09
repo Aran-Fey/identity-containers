@@ -74,3 +74,8 @@ class IdentitySet(collections.abc.MutableSet[T]):
     def __iand__(self, values: t.Iterable[T]) -> IdentitySet[T]:
         self.intersection_update(values)
         return self
+
+    def __repr__(self) -> str:
+        cls_name = type(self).__name__
+        items = ", ".join(map(repr, self))
+        return f"{cls_name}([{items}])"

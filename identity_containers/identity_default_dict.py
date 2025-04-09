@@ -25,3 +25,8 @@ class IdentityDefaultDict(IdentityDict[K, V]):
             value = self._default_factory()
             self[key] = value
             return value
+
+    def __repr__(self) -> str:
+        cls_name = type(self).__name__
+        items = self._repr_items()
+        return f"{cls_name}({self._default_factory!r}, {items})"

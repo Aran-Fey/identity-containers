@@ -45,3 +45,8 @@ def test_update():
     idict.update({4: "d", 5: "e"})
 
     assert set(idict.items()) == {(1, "a"), (2, "b"), (3, "c"), (4, "d"), (5, "e")}
+
+
+def test_repr():
+    idict = IdentityDict([([], "a"), ("b", {})])
+    assert repr(idict) == "IdentityDict([([], 'a'), ('b', {})])"

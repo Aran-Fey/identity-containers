@@ -19,3 +19,8 @@ def test_access_existing_key():
 
     assert len(iddict) == 1
     assert iddict["foo"] is foo
+
+
+def test_repr():
+    idict = IdentityDefaultDict(set, [([], "a"), ("b", {})])
+    assert repr(idict) == "IdentityDefaultDict(<class 'set'>, [([], 'a'), ('b', {})])"
