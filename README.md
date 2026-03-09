@@ -19,6 +19,7 @@ print(bar in id_set)  # False
 
 The following classes exist:
 
--   `IdentitySet`
--   `IdentityDict`
--   `IdentityDefaultDict`
+- `IdentitySet`
+- `IdentityDict`
+- `IdentityDefaultDict`
+- `IdentityWeakKeyDict`
